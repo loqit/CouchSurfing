@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EHi-ni-iDm">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Booking-->
+        <scene sceneID="KIP-tV-QB1">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmationViewController" title="Booking" id="EHi-ni-iDm" customClass="ConfirmationViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9aE-rV-t4J">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vis-eJ-HWO" customClass="SwiftConfettiView" customModule="SwiftConfettiView">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHA-G6-1QQ">
+                                <rect key="frame" x="20" y="63.999999999999993" width="350" height="21.666666666666664"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.22742196919999999" green="0.22746768589999999" blue="0.2274190784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au8-ha-RxK">
+                                <rect key="frame" x="76" y="441.33333333333331" width="238" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="0.22742196919999999" green="0.22746768589999999" blue="0.2274190784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Confirmation Illustration" translatesAutoresizingMaskIntoConstraints="NO" id="m4S-CI-pLQ">
+                                <rect key="frame" x="20" y="133.66666666666669" width="350" height="247.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m4S-CI-pLQ" secondAttribute="height" multiplier="335:237" id="FYp-wK-1nF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your booking has been confirmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-my-jEK">
+                                <rect key="frame" x="89.666666666666686" y="483.33333333333331" width="211" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.22742196919999999" green="0.22746768589999999" blue="0.2274190784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa4-wL-OK7">
+                                <rect key="frame" x="48" y="750" width="294" height="40"/>
+                                <color key="backgroundColor" red="0.94739645719999999" green="0.25566780569999997" blue="0.1923385859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aqq-1Z-V5F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                <state key="normal" title="Go back to Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackButtonPressed:" destination="EHi-ni-iDm" eventType="touchUpInside" id="UWL-d3-LYP"/>
+                                    <segue destination="LTL-ei-PVm" kind="unwind" unwindAction="unwingToExploreHomeScreen:" id="lMj-FX-uyR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VGU-lz-xAF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m4S-CI-pLQ" firstAttribute="top" secondItem="bHA-G6-1QQ" secondAttribute="bottom" constant="48" id="61H-Tu-xKp"/>
+                            <constraint firstItem="fa4-wL-OK7" firstAttribute="leading" secondItem="VGU-lz-xAF" secondAttribute="leading" constant="48" id="Cge-Ec-3eb"/>
+                            <constraint firstItem="bHA-G6-1QQ" firstAttribute="leading" secondItem="VGU-lz-xAF" secondAttribute="leading" constant="20" id="Eiw-bA-S5p"/>
+                            <constraint firstItem="au8-ha-RxK" firstAttribute="top" secondItem="m4S-CI-pLQ" secondAttribute="bottom" constant="60" id="FLV-XV-St6"/>
+                            <constraint firstItem="VGU-lz-xAF" firstAttribute="trailing" secondItem="fa4-wL-OK7" secondAttribute="trailing" constant="48" id="J6l-ac-8p1"/>
+                            <constraint firstItem="VGU-lz-xAF" firstAttribute="trailing" secondItem="bHA-G6-1QQ" secondAttribute="trailing" constant="20" id="JDa-29-t14"/>
+                            <constraint firstItem="VGU-lz-xAF" firstAttribute="trailing" secondItem="m4S-CI-pLQ" secondAttribute="trailing" constant="20" id="SAz-ir-cpJ"/>
+                            <constraint firstItem="m4S-CI-pLQ" firstAttribute="leading" secondItem="VGU-lz-xAF" secondAttribute="leading" constant="20" id="SLl-zO-54H"/>
+                            <constraint firstAttribute="bottom" secondItem="vis-eJ-HWO" secondAttribute="bottom" id="VaM-SE-p0D"/>
+                            <constraint firstItem="Blx-my-jEK" firstAttribute="centerX" secondItem="9aE-rV-t4J" secondAttribute="centerX" id="Vpd-QN-q2j"/>
+                            <constraint firstItem="VGU-lz-xAF" firstAttribute="bottom" secondItem="fa4-wL-OK7" secondAttribute="bottom" constant="20" id="aFe-YO-KxE"/>
+                            <constraint firstItem="vis-eJ-HWO" firstAttribute="leading" secondItem="VGU-lz-xAF" secondAttribute="leading" id="b77-df-aQI"/>
+                            <constraint firstItem="bHA-G6-1QQ" firstAttribute="top" secondItem="VGU-lz-xAF" secondAttribute="top" constant="20" id="bPK-4k-Yot"/>
+                            <constraint firstItem="VGU-lz-xAF" firstAttribute="trailing" secondItem="vis-eJ-HWO" secondAttribute="trailing" id="iFK-0W-DqX"/>
+                            <constraint firstItem="Blx-my-jEK" firstAttribute="top" secondItem="au8-ha-RxK" secondAttribute="bottom" constant="6" id="ujE-Yy-CZ6"/>
+                            <constraint firstItem="au8-ha-RxK" firstAttribute="centerX" secondItem="VGU-lz-xAF" secondAttribute="centerX" id="xin-av-y87"/>
+                            <constraint firstItem="vis-eJ-HWO" firstAttribute="top" secondItem="9aE-rV-t4J" secondAttribute="top" id="zZ1-X5-L9m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Booking" id="fN8-Xu-8Pg"/>
+                    <connections>
+                        <outlet property="confettiView" destination="vis-eJ-HWO" id="DXv-Pf-cv4"/>
+                        <outlet property="goBackButton" destination="fa4-wL-OK7" id="Kvq-Bx-Oyk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1Q-7c-iNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="LTL-ei-PVm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2437.5999999999999" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Confirmation Illustration" width="335" height="237"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

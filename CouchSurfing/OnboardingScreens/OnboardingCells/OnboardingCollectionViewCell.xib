@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="OnboardingCollectionViewCell" customModule="Hotel_Booking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MdD-av-aaw">
+                        <rect key="frame" x="63" y="0.0" width="249" height="212"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="MdD-av-aaw" secondAttribute="height" multiplier="249:212" id="qtW-Rd-gah"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-XL-ZGV">
+                        <rect key="frame" x="20" y="288" width="335" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="g8d-Jf-EhP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" red="0.94739645719999999" green="0.25566780569999997" blue="0.1923385859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kL2-Vc-Dg8">
+                        <rect key="frame" x="20" y="332" width="335" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="miX-SW-fGU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.199973762" green="0.2000150383" blue="0.19997116919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="YcQ-XL-ZGV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MdD-av-aaw" secondAttribute="bottom" constant="10" id="2Nm-mW-baY"/>
+                <constraint firstAttribute="trailing" secondItem="YcQ-XL-ZGV" secondAttribute="trailing" constant="20" id="DIp-nP-Umu"/>
+                <constraint firstAttribute="trailing" secondItem="kL2-Vc-Dg8" secondAttribute="trailing" constant="20" id="E1q-og-fkh"/>
+                <constraint firstItem="MdD-av-aaw" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.664" id="Gy1-PX-DxM"/>
+                <constraint firstItem="kL2-Vc-Dg8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="La0-j2-heG"/>
+                <constraint firstItem="YcQ-XL-ZGV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="N5I-w4-ckp"/>
+                <constraint firstItem="MdD-av-aaw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XDg-Be-HSp"/>
+                <constraint firstItem="MdD-av-aaw" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="aGw-nP-9XC"/>
+                <constraint firstAttribute="bottom" secondItem="kL2-Vc-Dg8" secondAttribute="bottom" id="pVA-da-D9A"/>
+                <constraint firstItem="kL2-Vc-Dg8" firstAttribute="top" secondItem="YcQ-XL-ZGV" secondAttribute="bottom" constant="20" id="rY4-5c-5VM"/>
+            </constraints>
+            <connections>
+                <outlet property="pageImage" destination="MdD-av-aaw" id="cIJ-WQ-IYC"/>
+                <outlet property="pageText" destination="kL2-Vc-Dg8" id="UrI-LN-rbe"/>
+                <outlet property="pageTitle" destination="YcQ-XL-ZGV" id="OWp-qj-eeC"/>
+            </connections>
+            <point key="canvasLocation" x="36.956521739130437" y="153.34821428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>
