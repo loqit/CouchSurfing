@@ -7,9 +7,6 @@ class ExploreHomeViewController: UIViewController {
     var currentDate = Date()
     var formatter = DateFormatter()
     var dateComponent = DateComponents()
-    var catalog: Catalog = Catalog()
-    var location: Location = Location()
-    var list: List = List()
 
     
     // MARK:- IBOutlets
@@ -41,11 +38,6 @@ class ExploreHomeViewController: UIViewController {
 //        }
         
         // MARK:- Запрос списка отелей в соответствии с выбранным поисковым запросом
-        NetworkManagerList.fetch(pageNumber: 1, pageSize: 25, destinationId: "118894", locale: "ru_RU") { [weak self] (list) in
-            guard let self = self else { return }
-            self.list = list
-            self.collectionView.reloadData()
-        }
     }
     
     private func configureUI() {
@@ -85,15 +77,10 @@ class ExploreHomeViewController: UIViewController {
     
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: "HouseCell", bundle: nil), forCellWithReuseIdentifier: "HouseCell")
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
     }
     
     private func configureTapRecognizer() {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(firstRecognizerClicked(_:)))
-        tapRecognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapRecognizer)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,60 +140,10 @@ class ExploreHomeViewController: UIViewController {
 
         // передача данных в tab bar
         guard let destinationVC = storyboard.instantiateViewController(identifier: "TabBarController") as? TabBarController else { return }
-        destinationVC.list = self.list
         destinationVC.location = self.locationTextField.text
         navigationController?.pushViewController(destinationVC, animated: true)
     }
 }
 
-extension ExploreHomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
-    
-    // количество ячеек задаем
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return catalog.hotels.count
-        guard let count = self.list.data?.body?.searchResults?.results?.count else { return 0 }
-        return count
-    }
-    
-    // внешний вид и содержание задаем
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HouseCell", for: indexPath) as! HouseCell
-//                let hotel = catalog.hotels[indexPath.item]
-        guard let hotel = self.list.data?.body?.searchResults?.results?[indexPath.item] else { return cell }
-        cell.setupCell(hotel: hotel)
-        return cell
-    }
-    
-    //  размер ячейки задаем
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //        return CGSize(width: 160, height: 168)
-        return CGSize(width: 160, height: 200)
-        
-    }
-    
-    // отспут между ячейками задаем
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 14
-    }
-    
-    // отрабатываем нажатие на ячейку
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let hotel = list.data?.body?.searchResults?.results?[indexPath.row] else { return }
-        let storyboard = UIStoryboard(name: "HouseDescription", bundle: nil)
-        guard let destinationVC = storyboard.instantiateViewController(identifier: "HouseDescriptionViewController") as? HouseDescriptionViewController else { return }
-        destinationVC.hotel = hotel
-        navigationController?.pushViewController(destinationVC, animated: true)
-//        show(destinationVC, sender: nil)
-    }
-    
-    @objc
-    func firstRecognizerClicked(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
-    }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
-}
 
  

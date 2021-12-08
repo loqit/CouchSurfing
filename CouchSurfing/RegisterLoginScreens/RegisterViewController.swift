@@ -2,6 +2,8 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class RegisterViewController: UIViewController {
     
@@ -51,7 +53,7 @@ class RegisterViewController: UIViewController {
         registerButton.isEnabled = false
         
         passwordTextField.autocorrectionType = .no
-        
+        passwordTextField.isSecureTextEntry = true
         textPrivacyPolicy()
         
         NotificationCenter.default.addObserver(self,
@@ -84,8 +86,6 @@ class RegisterViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-
     
     // MARK:- IBActions
     @IBAction func nameTextChanged(_ sender: UITextField) {
@@ -107,12 +107,37 @@ class RegisterViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "loginSegue", sender: nil)
     }
+    
+    private func createNewUser(with email: String) {
+        let userID = Auth.auth().currentUser!.uid
+        let userName = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let userDict = ["UserID": userID, "Name": userName, "Email": email, "PhoneNumber": ""]
+        print(userID)
+       
+        let currUser = CSUser(userID: userID, name: userName, email: email, phoneNumber: "")
+        
+        // Saving to Firestore
+        let db = Firestore.firestore()
+        db.collection("users").document(userID).setData(userDict)
+        /*
+        db.collection("users").addDocument( data: userDict) { (error) in
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: "Could not create new user", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }*/
+        
+    }
+    
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 if user != nil {
-                    self.performSegue(withIdentifier: "goToExploreHomeStoryboard", sender: nil)
+                    self.createNewUser(with: email)
+                    self.performSegue(withIdentifier: "goToTopHouseStoryboard", sender: nil)
                 } else {
                     let errorMessage = error?.localizedDescription ?? "Error"
                     let alertVC = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)

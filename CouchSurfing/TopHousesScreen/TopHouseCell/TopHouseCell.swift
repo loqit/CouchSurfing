@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 
 class TopHouseCell: UICollectionViewCell {
+    
     var bookNowButtonPressed: (() -> ())?
 
     @IBOutlet weak var backView: UIView!
@@ -20,12 +21,18 @@ class TopHouseCell: UICollectionViewCell {
     @IBOutlet weak var markButton: UIButton!
     @IBOutlet weak var bookNowButton: UIButton!
     
+    static let uniqueIdentifier: String = "TopHouseCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
+    }
+    
+    private func configureUI() {
         view.setupShadowAndRadius()
         backView.setupShadowAndRadius()
         bookNowButton.layer.borderWidth = 1
-        bookNowButton.layer.borderColor = customOrange.cgColor
+        bookNowButton.layer.borderColor = CSConstans.customOrange.cgColor
         bookNowButton.layer.cornerRadius = 5
     }
     
@@ -43,26 +50,12 @@ class TopHouseCell: UICollectionViewCell {
         bookNowButtonPressed?()
     }
     
-    //MARK:- использовать данные из сети
-//    func setupCell(hotel: Hotel) {
-//        self.imageView.image = hotel.image
-//        self.nameLabel.text = hotel.name
-//        self.priceLabel.text = "$ \(hotel.price)"
-//    }
-    
-    
-    //MARK:- использовать локальные данные 
-    func setupCell(hotel: Result) {
-        if let photoUrlString = hotel.optimizedThumbUrls?.srpDesktop {
-            if let photoUrl = URL(string: photoUrlString) {
-                self.imageView.kf.setImage(with: photoUrl)
-            }
+    func setupCell(house: House, canBook: Bool = false) {
+        nameLabel.text = house.title
+        if let url = URL(string: house.imageURL ?? "") {
+            imageView.kf.setImage(with: url)
         }
-
-        self.nameLabel.text = hotel.name
-        self.priceLabel.text = hotel.ratePlan?.price?.current
-        if let rating = hotel.starRating {
-            self.ratingLabel.text = String(rating)
-        }
+        priceLabel.text = house.city
+        bookNowButton.isHidden = canBook
     }
 }

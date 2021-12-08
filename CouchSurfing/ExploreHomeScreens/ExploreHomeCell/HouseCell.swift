@@ -22,20 +22,12 @@ class HouseCell: UICollectionViewCell {
         view.setupShadowAndRadius()
         backView.setupShadowAndRadius()
     }
-    
-    func setupCell(hotel: Result) {
-        guard let photoUrlString = hotel.optimizedThumbUrls?.srpDesktop else { return }
-        guard let photoUrl = URL(string: photoUrlString) else { return }
-        self.image.kf.setImage(with: photoUrl)
-        self.nameLabel.text = hotel.name
-        self.priceLabel.text = hotel.ratePlan?.price?.current
-
+    func setupCell(house: House) {
+        nameLabel.text = house.title
+        if let url = URL(string: house.imageURL ?? "") {
+            image.kf.setImage(with: url)
+        }
+        priceLabel.text = house.city
+        //bookNowButton.isHidden = canBook
     }
-    
-    
-//    func setupCell(hotel: Hotel) {
-//        self.image.image = hotel.image
-//        self.nameLabel.text = hotel.name
-//        self.priceLabel.text = "$ \(hotel.price)"
-//    }
 }

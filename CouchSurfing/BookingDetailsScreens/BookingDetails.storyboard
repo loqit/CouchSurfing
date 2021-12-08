@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HFQ-j3-CBW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HFQ-j3-CBW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--Booking-->
         <scene sceneID="d51-GS-gYG">
             <objects>
-                <viewController storyboardIdentifier="BookingDetailsViewController" id="HFQ-j3-CBW" customClass="BookingDetailsViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookingDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HFQ-j3-CBW" customClass="BookingDetailsViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lWj-Ta-YtW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,6 +127,7 @@
                                 </state>
                                 <connections>
                                     <action selector="bookNowButtonPressed:" destination="HFQ-j3-CBW" eventType="touchUpInside" id="u3k-zm-GYW"/>
+                                    <segue destination="cwa-6l-2eZ" kind="showDetail" identifier="goToConfirmation" id="oOj-FO-gCR"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-GQ-rGM">
@@ -146,6 +148,20 @@
                                     <constraint firstItem="Qco-fm-6di" firstAttribute="top" secondItem="Ubb-GQ-rGM" secondAttribute="top" id="vVC-m7-lWp"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x03-6T-yAM">
+                                <rect key="frame" x="48" y="738" width="318" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yyy-yd-BdD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                <state key="normal" title="Donate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="donateButtonPressed:" destination="HFQ-j3-CBW" eventType="touchUpInside" id="szG-Cx-wEg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YZD-DV-p6S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -154,6 +170,7 @@
                             <constraint firstItem="YZD-DV-p6S" firstAttribute="bottom" secondItem="qAM-nC-LUs" secondAttribute="bottom" constant="20" id="3Yo-A7-Xsn"/>
                             <constraint firstItem="YZD-DV-p6S" firstAttribute="trailing" secondItem="9zY-n2-GaC" secondAttribute="trailing" constant="20" id="6J2-n1-szm"/>
                             <constraint firstItem="sGO-dX-K1x" firstAttribute="top" secondItem="ueQ-u8-TNu" secondAttribute="bottom" constant="20" id="7Fr-jV-VX6"/>
+                            <constraint firstItem="x03-6T-yAM" firstAttribute="leading" secondItem="YZD-DV-p6S" secondAttribute="leading" constant="48" id="9Ut-qj-5Mn"/>
                             <constraint firstItem="Ubb-GQ-rGM" firstAttribute="top" secondItem="Yhs-xi-YmK" secondAttribute="bottom" constant="20" id="AJr-J0-Q3R"/>
                             <constraint firstItem="ueQ-u8-TNu" firstAttribute="leading" secondItem="YZD-DV-p6S" secondAttribute="leading" constant="20" id="Anc-iP-fuS"/>
                             <constraint firstItem="YZD-DV-p6S" firstAttribute="trailing" secondItem="BlM-5L-Uto" secondAttribute="trailing" constant="20" id="D14-Fa-rla"/>
@@ -168,12 +185,15 @@
                             <constraint firstItem="Yhs-xi-YmK" firstAttribute="leading" secondItem="YZD-DV-p6S" secondAttribute="leading" constant="20" id="Vap-Ym-Sd0"/>
                             <constraint firstItem="sGO-dX-K1x" firstAttribute="leading" secondItem="YZD-DV-p6S" secondAttribute="leading" constant="20" id="Y9f-Xh-V3r"/>
                             <constraint firstItem="ueQ-u8-TNu" firstAttribute="top" secondItem="9zY-n2-GaC" secondAttribute="bottom" constant="20" id="a9C-hd-Eta"/>
+                            <constraint firstItem="x03-6T-yAM" firstAttribute="top" secondItem="sGO-dX-K1x" secondAttribute="bottom" constant="222.5" id="g3K-gx-M5x"/>
+                            <constraint firstItem="YZD-DV-p6S" firstAttribute="trailing" secondItem="x03-6T-yAM" secondAttribute="trailing" constant="48" id="grm-hT-Wc0"/>
                             <constraint firstItem="qAM-nC-LUs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sGO-dX-K1x" secondAttribute="bottom" constant="10" id="kPR-tw-kBb"/>
                             <constraint firstItem="lND-0F-xjg" firstAttribute="leading" secondItem="YZD-DV-p6S" secondAttribute="leading" constant="20" id="oXX-s4-MOA"/>
                             <constraint firstItem="lND-0F-xjg" firstAttribute="top" secondItem="Ubb-GQ-rGM" secondAttribute="bottom" constant="20" id="oj1-DR-7wm"/>
                             <constraint firstItem="9zY-n2-GaC" firstAttribute="leading" secondItem="YZD-DV-p6S" secondAttribute="leading" constant="20" id="qSx-AP-zsh"/>
                             <constraint firstItem="BlM-5L-Uto" firstAttribute="leading" secondItem="YZD-DV-p6S" secondAttribute="leading" constant="20" id="rNU-sd-TwK"/>
                             <constraint firstItem="YZD-DV-p6S" firstAttribute="trailing" secondItem="qAM-nC-LUs" secondAttribute="trailing" constant="48" id="ryo-Y0-tfJ"/>
+                            <constraint firstItem="qAM-nC-LUs" firstAttribute="top" secondItem="x03-6T-yAM" secondAttribute="bottom" constant="24" id="u2n-Ff-vdZ"/>
                             <constraint firstItem="9zY-n2-GaC" firstAttribute="top" secondItem="lND-0F-xjg" secondAttribute="bottom" constant="20" id="zdQ-6P-OJg"/>
                         </constraints>
                     </view>
@@ -194,7 +214,7 @@
                         <outlet property="phoneView" destination="Ubb-GQ-rGM" id="XGw-2Y-Zs7"/>
                         <outlet property="roomTextField" destination="R2x-2f-8zc" id="Bdp-8i-KM0"/>
                         <outlet property="roomView" destination="sGO-dX-K1x" id="GCb-tw-cXX"/>
-                        <segue destination="cwa-6l-2eZ" kind="show" identifier="goToPaymentCheckoutStoryboard" id="pE1-Iq-VvR"/>
+                        <segue destination="MjF-Fi-VBP" kind="show" identifier="goToPaymentCheckout" id="CCD-gU-Zzq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wnq-21-pxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,7 +224,7 @@
         <!--People View Controller-->
         <scene sceneID="bdk-p4-SdC">
             <objects>
-                <viewController storyboardIdentifier="PeopleViewController" id="T4l-NA-CPm" customClass="PeopleViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PeopleViewController" id="T4l-NA-CPm" customClass="PeopleViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8VK-A8-bua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,7 +261,7 @@
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zmW-tI-uEZ">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zmW-tI-uEZ" id="nj7-bd-ipb">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -287,7 +307,7 @@
         <!--Rooms View Controller-->
         <scene sceneID="MHt-Lo-MFo">
             <objects>
-                <viewController storyboardIdentifier="RoomsViewController" id="Qc8-Lc-H1S" customClass="RoomsViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoomsViewController" id="Qc8-Lc-H1S" customClass="RoomsViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NZN-1l-mUQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,7 +344,7 @@
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1ae-JI-eqV">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ae-JI-eqV" id="IEq-mW-IYZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -368,19 +388,29 @@
             <point key="canvasLocation" x="3533" y="175"/>
         </scene>
         <!--PaymentCheckoutViewController-->
+        <scene sceneID="QUI-7U-FAj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PaymentCheckout" referencedIdentifier="PaymentCheckoutViewController" id="MjF-Fi-VBP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wZV-4M-EVR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Eu-9d-yse" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="587"/>
+        </scene>
+        <!--ConfirmationViewController-->
         <scene sceneID="jNC-mh-KJ4">
             <objects>
-                <viewControllerPlaceholder storyboardName="PaymentCheckout" referencedIdentifier="PaymentCheckoutViewController" id="cwa-6l-2eZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Confirmation" referencedIdentifier="ConfirmationViewController" id="cwa-6l-2eZ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ukc-v4-O4f"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1We-2A-reZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="832"/>
+            <point key="canvasLocation" x="1846" y="705"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="lgy-cK-a7q">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" id="UgN-Wa-4IC" customClass="CalendarViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" id="UgN-Wa-4IC" customClass="CalendarViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BHr-no-ojR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -504,6 +534,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

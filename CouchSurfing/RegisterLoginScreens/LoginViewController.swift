@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         
         emailTextField.setupLeftImage(imageName: "Email Icon")
         passwordTextField.setupLeftImage(imageName: "Password Icon")
+        passwordTextField.isSecureTextEntry = true
         
         loginButton.layer.cornerRadius = 5
         
@@ -67,7 +68,8 @@ class LoginViewController: UIViewController {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if user != nil {
-                    self.performSegue(withIdentifier: "goToExploreHomeStoryboard", sender: nil)
+                    
+                    self.performSegue(withIdentifier: "goToTopHouseStoryboard", sender: nil)
                 } else {
                     let errorMessage = error?.localizedDescription ?? "Error"
                     let alertVC = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)

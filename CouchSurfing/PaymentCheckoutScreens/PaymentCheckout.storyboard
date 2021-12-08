@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQZ-Eh-uzq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nQZ-Eh-uzq">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,35 +12,29 @@
         <!--Payment Options-->
         <scene sceneID="L5n-tk-Hc7">
             <objects>
-                <viewController storyboardIdentifier="PaymentCheckoutViewController" id="nQZ-Eh-uzq" customClass="PaymentCheckoutViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentCheckoutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nQZ-Eh-uzq" customClass="PaymentCheckoutViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sa4-Au-0a5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount to be paid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFX-pG-ipC">
-                                <rect key="frame" x="110.5" y="19" width="154.5" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount to donate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFX-pG-ipC">
+                                <rect key="frame" x="112.5" y="19" width="150" height="22"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="0.22742196919999999" green="0.22746768589999999" blue="0.2274190784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Р 6999.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rg6-Vm-kS6">
-                                <rect key="frame" x="92" y="70.5" width="191.5" height="50.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="42"/>
-                                <color key="textColor" red="0.22742196919999999" green="0.22746768589999999" blue="0.2274190784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a payment method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfi-WD-sIM">
-                                <rect key="frame" x="20" y="151" width="335" height="21.5"/>
+                                <rect key="frame" x="20" y="151.5" width="335" height="21.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="0.22742196919999999" green="0.22746768589999999" blue="0.2274190784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fy1-EZ-qzt">
-                                <rect key="frame" x="20" y="197.5" width="335" height="449.5"/>
+                                <rect key="frame" x="20" y="198" width="335" height="449"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaymentCheckoutTableViewCell" rowHeight="100" id="cZc-iC-5ZZ">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="100"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="335" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cZc-iC-5ZZ" id="Yuo-B4-HVB">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
@@ -49,6 +44,11 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Donate sum" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DU-6L-Ron">
+                                <rect key="frame" x="111" y="73" width="153" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5jV-Pr-idL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,14 +56,15 @@
                             <constraint firstItem="5jV-Pr-idL" firstAttribute="bottom" secondItem="Fy1-EZ-qzt" secondAttribute="bottom" constant="20" id="1ot-Uw-mq4"/>
                             <constraint firstItem="kFX-pG-ipC" firstAttribute="centerX" secondItem="5jV-Pr-idL" secondAttribute="centerX" id="5TZ-Hb-BNc"/>
                             <constraint firstItem="5jV-Pr-idL" firstAttribute="trailing" secondItem="bfi-WD-sIM" secondAttribute="trailing" constant="20" id="6NU-gW-Cvf"/>
+                            <constraint firstItem="5jV-Pr-idL" firstAttribute="trailing" secondItem="0DU-6L-Ron" secondAttribute="trailing" constant="111" id="7gk-7F-4cy"/>
+                            <constraint firstItem="0DU-6L-Ron" firstAttribute="top" secondItem="kFX-pG-ipC" secondAttribute="bottom" constant="32" id="C43-oe-Y3j"/>
                             <constraint firstItem="kFX-pG-ipC" firstAttribute="top" secondItem="5jV-Pr-idL" secondAttribute="top" constant="19" id="bP7-sH-Q5O"/>
-                            <constraint firstItem="Rg6-Vm-kS6" firstAttribute="centerX" secondItem="5jV-Pr-idL" secondAttribute="centerX" id="bfX-Lz-OsB"/>
+                            <constraint firstItem="bfi-WD-sIM" firstAttribute="top" secondItem="0DU-6L-Ron" secondAttribute="bottom" constant="44.5" id="dW4-3g-2bY"/>
                             <constraint firstItem="Fy1-EZ-qzt" firstAttribute="leading" secondItem="5jV-Pr-idL" secondAttribute="leading" constant="20" id="ezX-4V-fzA"/>
-                            <constraint firstItem="Rg6-Vm-kS6" firstAttribute="top" secondItem="kFX-pG-ipC" secondAttribute="bottom" constant="30" id="jiQ-hf-q02"/>
+                            <constraint firstItem="0DU-6L-Ron" firstAttribute="leading" secondItem="5jV-Pr-idL" secondAttribute="leading" constant="111" id="gdo-OV-SZe"/>
                             <constraint firstItem="5jV-Pr-idL" firstAttribute="trailing" secondItem="Fy1-EZ-qzt" secondAttribute="trailing" constant="20" id="ooC-Jb-OyM"/>
                             <constraint firstItem="Fy1-EZ-qzt" firstAttribute="top" secondItem="bfi-WD-sIM" secondAttribute="bottom" constant="25" id="qBp-ch-O5r"/>
                             <constraint firstItem="bfi-WD-sIM" firstAttribute="leading" secondItem="5jV-Pr-idL" secondAttribute="leading" constant="20" id="wWH-gL-0Ic"/>
-                            <constraint firstItem="bfi-WD-sIM" firstAttribute="top" secondItem="Rg6-Vm-kS6" secondAttribute="bottom" constant="30" id="zMc-ba-Hl9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Payment Options" id="sQf-yc-QMH"/>

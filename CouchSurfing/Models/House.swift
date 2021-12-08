@@ -9,8 +9,15 @@ import Foundation
 import UIKit
 
 struct House {
-    var image: UIImage
-    var name: String
-    var price: String
+    var houseID: UUID
+    var imageURL: String?
+    var title: String
+    var adress: String
+    var city: String
+    var country: String
+    var userOwnerID: String?
+    var description: String
+    var rating: Float?
+    var capacity: Int
 }
 

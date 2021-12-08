@@ -3,21 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6420FA6D275B68AE00F190A2 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA6C275B68AE00F190A2 /* Review.swift */; };
+		6420FA71275B6B1200F190A2 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA6F275B6B1200F190A2 /* ReviewCell.swift */; };
+		6420FA72275B6B1200F190A2 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6420FA70275B6B1200F190A2 /* ReviewCell.xib */; };
+		6420FA74275B737900F190A2 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA73275B737900F190A2 /* ReviewListViewController.swift */; };
+		6420FA76275B7B2200F190A2 /* CreateReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA75275B7B2100F190A2 /* CreateReviewViewController.swift */; };
+		6420FA78275CA61A00F190A2 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA77275CA61A00F190A2 /* Rating.swift */; };
+		6420FA7A275E0A7900F190A2 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA79275E0A7800F190A2 /* Collections.swift */; };
+		6420FA7C275E1FC000F190A2 /* PersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA7B275E1FC000F190A2 /* PersonalDataViewController.swift */; };
+		6420FA7E275F334500F190A2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA7D275F334500F190A2 /* ExploreViewController.swift */; };
+		6420FA80275FBB2F00F190A2 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA7F275FBB2F00F190A2 /* Reservation.swift */; };
+		6420FA82275FC52D00F190A2 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6420FA81275FC52D00F190A2 /* Payment.swift */; };
 		6454D66F274E16B600434648 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6454D66E274E16B600434648 /* GoogleService-Info.plist */; };
 		646BF5AF27426F76003A6946 /* UniqueTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BF5AE27426F76003A6946 /* UniqueTag.swift */; };
-		64EDE403274E1AE5007BE84A /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDE402274E1AE5007BE84A /* test.swift */; };
+		647DE6D327561FFA00C79D5D /* CreateHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647DE6D227561FFA00C79D5D /* CreateHouseViewController.swift */; };
+		647DE6D5275620DF00C79D5D /* CSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647DE6D4275620DE00C79D5D /* CSUser.swift */; };
+		647DE6D7275633EC00C79D5D /* HouseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647DE6D6275633EC00C79D5D /* HouseListViewController.swift */; };
+		64EDE405274E3AD2007BE84A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDE404274E3AD2007BE84A /* UserProfileViewController.swift */; };
 		A518C109268A1F8200AF5837 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C108268A1F8200AF5837 /* Extensions.swift */; };
 		A518C10D268A237100AF5837 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C10C268A237100AF5837 /* CalendarViewController.swift */; };
-		A52A03222699719400A8D690 /* NetworkManagerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A03212699719400A8D690 /* NetworkManagerList.swift */; };
-		A52A032526997A3000A8D690 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A032426997A3000A8D690 /* List.swift */; };
 		A52A033C269DBA8B00A8D690 /* HouseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A033B269DBA8A00A8D690 /* HouseDescriptionViewController.swift */; };
 		A52A0340269DBAA700A8D690 /* HouseDescription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52A033F269DBAA700A8D690 /* HouseDescription.storyboard */; };
-		A52A0343269DF3F200A8D690 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A0342269DF3F000A8D690 /* Details.swift */; };
-		A52A0346269DFE5F00A8D690 /* NetworkManagerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A0345269DFE5F00A8D690 /* NetworkManagerDetails.swift */; };
 		A52A0349269EE82000A8D690 /* ShowInMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A0348269EE81F00A8D690 /* ShowInMapViewController.swift */; };
 		A52E2D8E2664F580003C5E95 /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E2D8D2664F580003C5E95 /* PaymentService.swift */; };
 		A532436826A8212500DCC9F3 /* TopHouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532436626A8212500DCC9F3 /* TopHouseCell.swift */; };
@@ -41,7 +51,6 @@
 		A54CAFF0264E7EC300C29522 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54CAFEE264E7EC300C29522 /* Onboarding.storyboard */; };
 		A54CAFF2264E7EC400C29522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54CAFF1264E7EC400C29522 /* Assets.xcassets */; };
 		A54CAFF5264E7EC400C29522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54CAFF3264E7EC400C29522 /* LaunchScreen.storyboard */; };
-		A55597D42680F85400B6D664 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55597D32680F85400B6D664 /* Catalog.swift */; };
 		A555980126810E4800B6D664 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A555980026810E4800B6D664 /* Service.swift */; };
 		A577DF4E2665394100925863 /* PaymentCheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A577DF4D2665394100925863 /* PaymentCheckoutTableViewCell.xib */; };
 		A577DF572666494400925863 /* BookingDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A577DF562666494400925863 /* BookingDetails.storyboard */; };
@@ -51,9 +60,6 @@
 		A577DF6A2666B44A00925863 /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577DF682666B44A00925863 /* HouseCell.swift */; };
 		A577DF6B2666B44A00925863 /* HouseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A577DF692666B44A00925863 /* HouseCell.xib */; };
 		A577DF6E2666B8DE00925863 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577DF6D2666B8DE00925863 /* House.swift */; };
-		A577DFC02669352E00925863 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577DFBF2669352E00925863 /* NetworkManager.swift */; };
-		A57BA03C2698515300965388 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57BA03B2698515300965388 /* Location.swift */; };
-		A57BA0402698731A00965388 /* NetworkManagerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57BA03F2698731A00965388 /* NetworkManagerLocation.swift */; };
 		A596EA36264E8217006A0BDB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596EA35264E8217006A0BDB /* OnboardingViewController.swift */; };
 		A596EA3D264E8467006A0BDB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596EA3B264E8467006A0BDB /* OnboardingCollectionViewCell.swift */; };
 		A596EA3E264E8467006A0BDB /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A596EA3C264E8467006A0BDB /* OnboardingCollectionViewCell.xib */; };
@@ -72,19 +78,29 @@
 
 /* Begin PBXFileReference section */
 		42F60F2FA1EF4FEF21BC7A89 /* Pods-CouchSurfing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchSurfing.debug.xcconfig"; path = "Target Support Files/Pods-CouchSurfing/Pods-CouchSurfing.debug.xcconfig"; sourceTree = "<group>"; };
+		6420FA6C275B68AE00F190A2 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		6420FA6F275B6B1200F190A2 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		6420FA70275B6B1200F190A2 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		6420FA73275B737900F190A2 /* ReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListViewController.swift; sourceTree = "<group>"; };
+		6420FA75275B7B2100F190A2 /* CreateReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewViewController.swift; sourceTree = "<group>"; };
+		6420FA77275CA61A00F190A2 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		6420FA79275E0A7800F190A2 /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
+		6420FA7B275E1FC000F190A2 /* PersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataViewController.swift; sourceTree = "<group>"; };
+		6420FA7D275F334500F190A2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		6420FA7F275FBB2F00F190A2 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		6420FA81275FC52D00F190A2 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		6454D66E274E16B600434648 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		646BF5AE27426F76003A6946 /* UniqueTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueTag.swift; sourceTree = "<group>"; };
-		64EDE402274E1AE5007BE84A /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		647DE6D227561FFA00C79D5D /* CreateHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHouseViewController.swift; sourceTree = "<group>"; };
+		647DE6D4275620DE00C79D5D /* CSUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSUser.swift; sourceTree = "<group>"; };
+		647DE6D6275633EC00C79D5D /* HouseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListViewController.swift; sourceTree = "<group>"; };
+		64EDE404274E3AD2007BE84A /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		67FD72E04B86D2AE83788AE6 /* Pods-CouchSurfing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchSurfing.release.xcconfig"; path = "Target Support Files/Pods-CouchSurfing/Pods-CouchSurfing.release.xcconfig"; sourceTree = "<group>"; };
 		95D5EE0E5FD66FB44C18C477 /* Pods_CouchSurfing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchSurfing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A518C108268A1F8200AF5837 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A518C10C268A237100AF5837 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		A52A03212699719400A8D690 /* NetworkManagerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerList.swift; sourceTree = "<group>"; };
-		A52A032426997A3000A8D690 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		A52A033B269DBA8A00A8D690 /* HouseDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDescriptionViewController.swift; sourceTree = "<group>"; };
 		A52A033F269DBAA700A8D690 /* HouseDescription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HouseDescription.storyboard; sourceTree = "<group>"; };
-		A52A0342269DF3F000A8D690 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
-		A52A0345269DFE5F00A8D690 /* NetworkManagerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDetails.swift; sourceTree = "<group>"; };
 		A52A0348269EE81F00A8D690 /* ShowInMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInMapViewController.swift; sourceTree = "<group>"; };
 		A52E2D8D2664F580003C5E95 /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		A532436626A8212500DCC9F3 /* TopHouseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHouseCell.swift; sourceTree = "<group>"; };
@@ -110,7 +126,6 @@
 		A54CAFF1264E7EC400C29522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A54CAFF4264E7EC400C29522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A54CAFF6264E7EC400C29522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A55597D32680F85400B6D664 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		A555980026810E4800B6D664 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		A577DF4D2665394100925863 /* PaymentCheckoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCheckoutTableViewCell.xib; sourceTree = "<group>"; };
 		A577DF562666494400925863 /* BookingDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookingDetails.storyboard; sourceTree = "<group>"; };
@@ -120,9 +135,6 @@
 		A577DF682666B44A00925863 /* HouseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
 		A577DF692666B44A00925863 /* HouseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseCell.xib; sourceTree = "<group>"; };
 		A577DF6D2666B8DE00925863 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
-		A577DFBF2669352E00925863 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		A57BA03B2698515300965388 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		A57BA03F2698731A00965388 /* NetworkManagerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerLocation.swift; sourceTree = "<group>"; };
 		A596EA35264E8217006A0BDB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A596EA3B264E8467006A0BDB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		A596EA3C264E8467006A0BDB /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -167,20 +179,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6420FA6E275B6AD000F190A2 /* ReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6420FA6F275B6B1200F190A2 /* ReviewCell.swift */,
+				6420FA70275B6B1200F190A2 /* ReviewCell.xib */,
+			);
+			path = ReviewCell;
+			sourceTree = "<group>";
+		};
 		646BF5AD27426F5C003A6946 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				646BF5AE27426F76003A6946 /* UniqueTag.swift */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		647AA0E3274CE4EA00643FE7 /* UserProfileScreens */ = {
-			isa = PBXGroup;
-			children = (
-				64EDE402274E1AE5007BE84A /* test.swift */,
-			);
-			path = UserProfileScreens;
 			sourceTree = "<group>";
 		};
 		A518C10B268A200500AF5837 /* CalendarPopUpScreen */ = {
@@ -191,41 +204,50 @@
 			path = CalendarPopUpScreen;
 			sourceTree = "<group>";
 		};
-		A52A033A269DBA0E00A8D690 /* HotelDescriptionScreen */ = {
+		A52A033A269DBA0E00A8D690 /* HouseDescriptionScreen */ = {
 			isa = PBXGroup;
 			children = (
+				6420FA6E275B6AD000F190A2 /* ReviewCell */,
 				A52A033B269DBA8A00A8D690 /* HouseDescriptionViewController.swift */,
 				A52A0348269EE81F00A8D690 /* ShowInMapViewController.swift */,
 				A52A033F269DBAA700A8D690 /* HouseDescription.storyboard */,
+				6420FA73275B737900F190A2 /* ReviewListViewController.swift */,
+				6420FA75275B7B2100F190A2 /* CreateReviewViewController.swift */,
 			);
-			path = HotelDescriptionScreen;
+			path = HouseDescriptionScreen;
 			sourceTree = "<group>";
 		};
-		A532436426A8205100DCC9F3 /* TopHotelsScreen */ = {
+		A532436426A8205100DCC9F3 /* TopHousesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A532436526A820B000DCC9F3 /* TopHotelCell */,
+				64EDE404274E3AD2007BE84A /* UserProfileViewController.swift */,
+				647DE6D227561FFA00C79D5D /* CreateHouseViewController.swift */,
+				647DE6D6275633EC00C79D5D /* HouseListViewController.swift */,
+				A532436526A820B000DCC9F3 /* TopHouseCell */,
 				A532439326A9C5F100DCC9F3 /* TabBarController.swift */,
 				A532437526A8377600DCC9F3 /* TopHouseViewController.swift */,
 				A532437B26A9A2D500DCC9F3 /* WishlistViewController.swift */,
 				A532437826A8378B00DCC9F3 /* TopHouse.storyboard */,
+				6420FA7B275E1FC000F190A2 /* PersonalDataViewController.swift */,
+				6420FA7D275F334500F190A2 /* ExploreViewController.swift */,
 			);
-			path = TopHotelsScreen;
+			path = TopHousesScreen;
 			sourceTree = "<group>";
 		};
-		A532436526A820B000DCC9F3 /* TopHotelCell */ = {
+		A532436526A820B000DCC9F3 /* TopHouseCell */ = {
 			isa = PBXGroup;
 			children = (
 				A532436626A8212500DCC9F3 /* TopHouseCell.swift */,
 				A532436726A8212500DCC9F3 /* TopHouseCell.xib */,
 			);
-			path = TopHotelCell;
+			path = TopHouseCell;
 			sourceTree = "<group>";
 		};
 		A532436B26A82D8B00DCC9F3 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				A532436C26A82DAA00DCC9F3 /* Constants.swift */,
+				6420FA79275E0A7800F190A2 /* Collections.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -281,17 +303,15 @@
 		A54CAFE7264E7EC300C29522 /* CouchSurfing */ = {
 			isa = PBXGroup;
 			children = (
-				647AA0E3274CE4EA00643FE7 /* UserProfileScreens */,
 				646BF5AD27426F5C003A6946 /* Tools */,
 				A532436B26A82D8B00DCC9F3 /* Constants */,
 				A57BA03A269850CC00965388 /* Models */,
-				A577DFBE266934DC00925863 /* NetworkManager */,
 				A577DFBD26691B9C00925863 /* Extensions */,
 				A596EA44264E9A17006A0BDB /* OnboardingScreens */,
 				A5E7335E264FD378003924E1 /* RegisterLoginScreens */,
 				A577DF5F2666796700925863 /* ExploreHomeScreens */,
-				A532436426A8205100DCC9F3 /* TopHotelsScreen */,
-				A52A033A269DBA0E00A8D690 /* HotelDescriptionScreen */,
+				A532436426A8205100DCC9F3 /* TopHousesScreen */,
+				A52A033A269DBA0E00A8D690 /* HouseDescriptionScreen */,
 				A577DF522666487200925863 /* BookingDetailsScreens */,
 				A5BE73CA266101B10033D58F /* DetailsScreens */,
 				A5BE73C92661016D0033D58F /* PaymentCheckoutScreens */,
@@ -354,25 +374,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A577DFBE266934DC00925863 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-				A577DFBF2669352E00925863 /* NetworkManager.swift */,
-				A57BA03F2698731A00965388 /* NetworkManagerLocation.swift */,
-				A52A03212699719400A8D690 /* NetworkManagerList.swift */,
-				A52A0345269DFE5F00A8D690 /* NetworkManagerDetails.swift */,
-			);
-			path = NetworkManager;
-			sourceTree = "<group>";
-		};
 		A57BA03A269850CC00965388 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A57BA03B2698515300965388 /* Location.swift */,
-				A52A032426997A3000A8D690 /* List.swift */,
-				A52A0342269DF3F000A8D690 /* Details.swift */,
 				A577DF6D2666B8DE00925863 /* House.swift */,
-				A55597D32680F85400B6D664 /* Catalog.swift */,
+				647DE6D4275620DE00C79D5D /* CSUser.swift */,
+				6420FA6C275B68AE00F190A2 /* Review.swift */,
+				6420FA77275CA61A00F190A2 /* Rating.swift */,
+				6420FA7F275FBB2F00F190A2 /* Reservation.swift */,
+				6420FA81275FC52D00F190A2 /* Payment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,6 +528,7 @@
 				A577DF6B2666B44A00925863 /* HouseCell.xib in Resources */,
 				A5BE73D6266132920033D58F /* PaymentCheckout.storyboard in Resources */,
 				A532437926A8378B00DCC9F3 /* TopHouse.storyboard in Resources */,
+				6420FA72275B6B1200F190A2 /* ReviewCell.xib in Resources */,
 				A5E73360264FD3F4003924E1 /* RegisterLogin.storyboard in Resources */,
 				A54CAFF0264E7EC300C29522 /* Onboarding.storyboard in Resources */,
 			);
@@ -572,46 +583,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6420FA76275B7B2200F190A2 /* CreateReviewViewController.swift in Sources */,
 				A577DF6E2666B8DE00925863 /* House.swift in Sources */,
-				A52A0346269DFE5F00A8D690 /* NetworkManagerDetails.swift in Sources */,
+				6420FA82275FC52D00F190A2 /* Payment.swift in Sources */,
+				6420FA80275FBB2F00F190A2 /* Reservation.swift in Sources */,
+				647DE6D5275620DF00C79D5D /* CSUser.swift in Sources */,
 				A5E7336A264FE3D6003924E1 /* LoginViewController.swift in Sources */,
 				A5BC3126266F7FBD00132BF6 /* ResetPasswordViewController.swift in Sources */,
 				A518C10D268A237100AF5837 /* CalendarViewController.swift in Sources */,
 				A52A033C269DBA8B00A8D690 /* HouseDescriptionViewController.swift in Sources */,
 				A54CAFE9264E7EC300C29522 /* AppDelegate.swift in Sources */,
-				A52A0343269DF3F200A8D690 /* Details.swift in Sources */,
 				A577DF6A2666B44A00925863 /* HouseCell.swift in Sources */,
 				A5451C32268366ED00BBE1FC /* BookingDetailsCell.swift in Sources */,
+				6420FA7E275F334500F190A2 /* ExploreViewController.swift in Sources */,
 				A532437C26A9A2D700DCC9F3 /* WishlistViewController.swift in Sources */,
 				A532436826A8212500DCC9F3 /* TopHouseCell.swift in Sources */,
 				A5451C2D26835ABE00BBE1FC /* PeopleViewController.swift in Sources */,
-				A577DFC02669352E00925863 /* NetworkManager.swift in Sources */,
+				6420FA7A275E0A7900F190A2 /* Collections.swift in Sources */,
 				A555980126810E4800B6D664 /* Service.swift in Sources */,
 				A5451C392683746E00BBE1FC /* Renter.swift in Sources */,
+				64EDE405274E3AD2007BE84A /* UserProfileViewController.swift in Sources */,
 				A5E73366264FE349003924E1 /* RegisterViewController.swift in Sources */,
 				A54CAFEB264E7EC300C29522 /* SceneDelegate.swift in Sources */,
 				A5BE73CC2661021A0033D58F /* ConfirmationViewController.swift in Sources */,
+				6420FA78275CA61A00F190A2 /* Rating.swift in Sources */,
 				A596EA42264E8B9C006A0BDB /* Onboarding.swift in Sources */,
 				A596EA36264E8217006A0BDB /* OnboardingViewController.swift in Sources */,
-				64EDE403274E1AE5007BE84A /* test.swift in Sources */,
+				647DE6D7275633EC00C79D5D /* HouseListViewController.swift in Sources */,
 				A532436D26A82DAA00DCC9F3 /* Constants.swift in Sources */,
 				A577DF5B266649C500925863 /* BookingDetailsViewController.swift in Sources */,
-				A52A032526997A3000A8D690 /* List.swift in Sources */,
 				A5451C3E2683762500BBE1FC /* RoomRenter.swift in Sources */,
 				A5BE73DF26614F320033D58F /* PaymentCheckoutTableViewCell.swift in Sources */,
-				A55597D42680F85400B6D664 /* Catalog.swift in Sources */,
-				A52A03222699719400A8D690 /* NetworkManagerList.swift in Sources */,
+				6420FA71275B6B1200F190A2 /* ReviewCell.swift in Sources */,
+				6420FA7C275E1FC000F190A2 /* PersonalDataViewController.swift in Sources */,
+				647DE6D327561FFA00C79D5D /* CreateHouseViewController.swift in Sources */,
 				A5451C4A2684F23700BBE1FC /* RoomsViewController.swift in Sources */,
 				A596EA3D264E8467006A0BDB /* OnboardingCollectionViewCell.swift in Sources */,
 				646BF5AF27426F76003A6946 /* UniqueTag.swift in Sources */,
 				A52A0349269EE82000A8D690 /* ShowInMapViewController.swift in Sources */,
-				A57BA03C2698515300965388 /* Location.swift in Sources */,
-				A57BA0402698731A00965388 /* NetworkManagerLocation.swift in Sources */,
 				A52E2D8E2664F580003C5E95 /* PaymentService.swift in Sources */,
 				A532437626A8377600DCC9F3 /* TopHouseViewController.swift in Sources */,
 				A577DF6126667A2400925863 /* ExploreHomeViewController.swift in Sources */,
 				A5BE73D9266133390033D58F /* PaymentCheckoutViewController.swift in Sources */,
 				A5451C502684F35E00BBE1FC /* BookingRoom.swift in Sources */,
+				6420FA74275B737900F190A2 /* ReviewListViewController.swift in Sources */,
+				6420FA6D275B68AE00F190A2 /* Review.swift in Sources */,
 				A5451C4D2684F31100BBE1FC /* Room.swift in Sources */,
 				A532439426A9C5F300DCC9F3 /* TabBarController.swift in Sources */,
 				A5451C5B2684FB3600BBE1FC /* BookingDetails.swift in Sources */,

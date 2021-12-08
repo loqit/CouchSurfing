@@ -1,6 +1,9 @@
 
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class PaymentCheckoutViewController: UIViewController {
     
@@ -8,6 +11,7 @@ class PaymentCheckoutViewController: UIViewController {
     
     var paymentService: PaymentService = PaymentService()
     let separatorColor: UIColor = UIColor(red: 219, green: 219, blue: 222, alpha: 100)
+    var houseID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,11 @@ class PaymentCheckoutViewController: UIViewController {
     }
     
     @IBAction func unwingToPaymentCheckoutScreen(_ sender: UIStoryboardSegue) {
+    }
+    
+    private func createPayment() {
+        let db = Firestore.firestore()
+        
     }
 }
 

@@ -275,16 +275,6 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-gu-fRt">
-                                        <rect key="frame" x="0.0" y="725" width="414" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <items>
-                                            <tabBarItem title="Explore" image="CompasColor" selectedImage="CompasColor" id="fZQ-GZ-Me3"/>
-                                            <tabBarItem title="User" image="name Icon" selectedImage="name Icon" id="QtM-U8-9bR"/>
-                                        </items>
-                                        <color key="tintColor" systemColor="systemRedColor"/>
-                                    </tabBar>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Pm6-1p-7JD" firstAttribute="top" secondItem="KzE-Gl-bh3" secondAttribute="top" id="Ur5-XN-q4x"/>
@@ -322,11 +312,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvh-gq-AEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2912" y="196"/>
+            <point key="canvasLocation" x="2978" y="204"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t5g-hv-nkS">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gm-bI-Cmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ugT-Zz-jgA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9gh-JP-mkU">
@@ -338,19 +329,13 @@
                         <segue destination="fbS-x4-ioW" kind="relationship" relationship="rootViewController" id="a0W-xO-274"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5gm-bI-Cmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2005.7971014492755" y="195.53571428571428"/>
         </scene>
     </scenes>
     <resources>
-        <image name="CompasColor" width="24" height="24"/>
-        <image name="name Icon" width="16" height="17"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

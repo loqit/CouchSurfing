@@ -1,12 +1,17 @@
 
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class BookingDetailsViewController: UIViewController, UITextFieldDelegate {
     
 //    MARK:- Properties
     var formatter = DateFormatter()
 //    let nm = NetworkManager()
+    
+    var houseID: String?
     
     //    MARK:- IBOutlets
     @IBOutlet weak var nameView: UIView!
@@ -93,8 +98,26 @@ class BookingDetailsViewController: UIViewController, UITextFieldDelegate {
     
     //    MARK:- IBActions
     @IBAction func bookNowButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToPaymentCheckoutStoryboard", sender: nil)
+        performSegue(withIdentifier: "goToConfirmation", sender: self)
     }
+    
+    @IBAction func donateButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToPaymentCheckout", sender: nil)
+    }
+    
+    private func createReservation() {
+        let db = Firestore.firestore()
+        guard let houseID = houseID else {
+            return
+        }
+        let checkIndate = formatter.date(from: checkInTextField.text ?? "")
+        let checkOutDate = formatter.date(from: checkOutTextField.text ?? "")
+        let userID = Auth.auth().currentUser!.uid
+        let numberOfGuests = peopleTextField.text?.first ?? "1"
+        let dict = ["HouseID": houseID, "UserID": userID, "checkInDate": checkIndate, "checkOutDate": checkOutDate, "numberOfGuests": numberOfGuests] as [String: Any]
+        db.collection("reservations").document(houseID + userID).setData(dict)
+    }
+    
     
     //    MARK:- Functions
     @objc func goToPeopleVC(textField: UITextField) {
@@ -147,47 +170,4 @@ class BookingDetailsViewController: UIViewController, UITextFieldDelegate {
     @objc func firstRecognizerClicked(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    
-    // передача данных назад через notification
-    
-    
-    //    @objc func checkInNotificationFromCalendarViewController(_ notification: Notification) {
-    //        if let date = notification.object as? Date {
-    //            formatter.dateFormat = "dd MMM, yyy"
-    //            dataInTextField.text = "\(formatter.string(from: date))"
-    //        }
-    //    }
-    //
-    //    @objc func checkOutNotificationFromCalendarViewController(_ notification: Notification) {
-    //        if let date = notification.object as? Date {
-    //            formatter.dateFormat = "dd MMM, yyy"
-    //            dataOutTextField.text = "\(formatter.string(from: date))"
-    //        }
-    //    }
-    //
-    //    @objc func peopleNotificationFromPeopleViewController(_ notification: Notification) {
-    //        guard let roomRenter = notification.object as? RoomRenter else { return }
-    //        for renter in roomRenter.roomRenters {
-    //            if renter.quantity != 0 {
-    //                if peopleTextField.text == "" {
-    //                    peopleTextField.text! += "\(renter.quantity) \(renter.name)"
-    //                } else {
-    //                    peopleTextField.text! += ", \(renter.quantity) \(renter.name)"
-    //                }
-    //            }
-    //        }
-    //    }
-    //
-    //    @objc func roomNotificationFromRoomsViewControllerr(_ notification: Notification) {
-    //        guard let bookingRoom = notification.object as? BookingRoom else { return }
-    //        for room in bookingRoom.bookingRooms {
-    //            if room.quantity != 0 {
-    //                if roomTextField.text == "" {
-    //                    roomTextField.text! += "\(room.quantity) \(room.name)"
-    //                } else {
-    //                    roomTextField.text! += ", \(room.quantity) \(room.name)"
-    //                }
-    //            }
-    //        }
-    //    }
 }

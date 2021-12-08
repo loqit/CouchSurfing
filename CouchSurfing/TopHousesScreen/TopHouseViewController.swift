@@ -6,16 +6,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class TopHouseViewController: UIViewController {
     
-    var catalog: Catalog?
     var wishListCatalog: [House] = []
-    var allHotelsCatalog: [Result] = []
-    var list: List?
+    var allHousesCatalog: [House] = []
     var location: String?
-    var hotel: Result?
-    var pageNumber: Int = 1
+    var house: House?
+    var params: [String: Any] = [:]
+    
 
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,59 +25,100 @@ class TopHouseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureLocationLabel()
+        configureCollectionView()
+        fetchHouses(with: params)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        fetchHouses(with: params)
+    }
+    
+    private func configureLocationLabel() {
         if let location = self.location {
             locationLabel.text = location
         }
-        
-        collectionView.register(UINib(nibName: "TopHouseCell", bundle: nil), forCellWithReuseIdentifier: "TopHouseCell")
+    }
+    
+    private func configureCollectionView() {
+        collectionView.register(UINib(nibName: TopHouseCell.uniqueIdentifier, bundle: nil), forCellWithReuseIdentifier: TopHouseCell.uniqueIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-        //        let vc2 = WishlistViewController()
-        
-        guard let seachResult = self.list?.data?.body?.searchResults?.results, let totalCount = self.list?.data?.body?.searchResults?.totalCount else { return }
-        allHotelsCatalog.append(contentsOf: seachResult)
-        let numberOfPages: Int = Int(ceil(CGFloat(totalCount) / CGFloat(allHotelsCatalog.count)))
-        for page in 1...numberOfPages {
-//        for page in 1...2 {
-            if page == 1 {
-                continue
+    }
+    
+    private func fetchHouses(with params: [String: Any]?) {
+        guard let params = params else { return }
+        let db = Firestore.firestore()
+        let city = params["City"] as? String ?? ""
+        let tmp = params["Capacity"] as? String ?? "1"
+        let capacity = Int(tmp) ?? 0
+        var dict: [[String: Any]] = []
+        DispatchQueue.global().async {
+            db.collection("houses")
+                .whereField("City", isEqualTo: city)
+                .whereField("Capacity", isGreaterThanOrEqualTo: capacity)
+                .getDocuments()
+                { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        dict.append(document.data())
+                        print(dict)
+                        self.updateCollectionView(with: dict)
+                    }
+                }
             }
-            
-            NetworkManagerList.fetch(pageNumber: page, pageSize: 25, destinationId: "118894", locale: "ru_RU") { [weak self] (list) in
-                guard let self = self else { return }
-                guard let seachResult = list.data?.body?.searchResults?.results else { return }
-                self.allHotelsCatalog.append(contentsOf: seachResult)
-                self.collectionView.reloadData()
+        }
+
+    }
+    
+    private func fetchHouses() {
+        let db = Firestore.firestore()
+        var dict: [[String: Any]] = []
+        DispatchQueue.global().async {
+            db.collection("houses").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        dict.append(document.data())
+                    }
+                    self.updateCollectionView(with: dict)
+                }
             }
+        }
+    }
+    
+    private func updateCollectionView(with data: [[String: Any]]) {
+        allHousesCatalog = []
+        for item in data {
+            let newHouse = CSConstans.setHouse(with: item)
+            self.allHousesCatalog.append(newHouse)
+            self.collectionView.reloadData()
         }
     }
 }
 
 extension TopHouseViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     // количество ячеек задаем
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        guard let count = catalog?.hotels.count else { return 0 }
-//        guard let count = self.list?.data?.body?.searchResults?.results?.count else { return 0 }
-        let count = self.allHotelsCatalog.count
+        let count = self.allHousesCatalog.count
         return count
     }
-    
+
     // внешний вид и содержание задаем
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopHouseCell", for: indexPath) as! TopHouseCell
-//        guard let hotel = catalog?.hotels[indexPath.item] else { return cell }
-//        guard let hotel = self.list?.data?.body?.searchResults?.results?[indexPath.item] else { return cell }
-        let hotel = self.allHotelsCatalog[indexPath.item]
-        cell.setupCell(hotel: hotel)
-        self.hotel = hotel
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopHouseCell.uniqueIdentifier, for: indexPath) as! TopHouseCell
+        let house = self.allHousesCatalog[indexPath.item]
+        cell.setupCell(house: house)
+        self.house = house
         cell.bookNowButtonPressed = { [weak self] in
             guard let self = self else { return }
             let storyboard = UIStoryboard(name: "HouseDescription", bundle: nil)
             guard let destinationVC = storyboard.instantiateViewController(identifier: "HouseDescriptionViewController") as? HouseDescriptionViewController else { return }
-            guard let hotel = self.hotel else { return }
-            destinationVC.hotel = hotel
+            guard let house = self.house else { return }
+            destinationVC.house = house
             self.navigationController?.pushViewController(destinationVC, animated: true)
         }
 //        cell.bookNowButtonPressed = {
@@ -87,7 +130,6 @@ extension TopHouseViewController: UICollectionViewDataSource, UICollectionViewDe
 //                return true
 //            }
 //        }
-        
         return cell
     }
     
@@ -98,20 +140,18 @@ extension TopHouseViewController: UICollectionViewDataSource, UICollectionViewDe
         let cellWidth = screenWidth - offset * 2
         return CGSize(width: cellWidth, height: 218.14)
     }
-    
+
     // отспут между ячейками задаем
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12.86
+        return CSConstans.cellIndent
     }
-    
+
     // отрабатываем нажатие на ячейку
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let hotel = list?.data?.body?.searchResults?.results?[indexPath.row] else { return }
-        let hotel = self.allHotelsCatalog[indexPath.item]
+        let house = self.allHousesCatalog[indexPath.item]
         let storyboard = UIStoryboard(name: "HouseDescription", bundle: nil)
         guard let destinationVC = storyboard.instantiateViewController(identifier: "HouseDescriptionViewController") as? HouseDescriptionViewController else { return }
-        destinationVC.hotel = hotel
+        destinationVC.house = house
         navigationController?.pushViewController(destinationVC, animated: true)
-//        show(destinationVC, sender: nil)
     }
 }

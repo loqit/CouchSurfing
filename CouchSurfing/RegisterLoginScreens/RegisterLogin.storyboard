@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyz-4u-kMl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyz-4u-kMl">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -231,7 +232,7 @@
                         <outlet property="passwordView" destination="7k1-IX-nc7" id="igu-oe-5gA"/>
                         <outlet property="registerButton" destination="iO8-io-ma5" id="odb-M5-FcM"/>
                         <segue destination="gcm-92-iUj" kind="show" identifier="loginSegue" id="Qt2-gO-Ksb"/>
-                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToExploreHomeStoryboard" id="npc-9x-5TF"/>
+                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToTopHouseStoryboard" id="npc-9x-5TF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMk-r1-0J3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -423,7 +424,7 @@
                         <outlet property="loginButton" destination="Uzv-9T-Aob" id="Ryt-RT-NVO"/>
                         <outlet property="passwordTextField" destination="2kP-g4-fFu" id="eKp-dn-02C"/>
                         <outlet property="passwordView" destination="SUz-56-sV4" id="vLa-p3-U2x"/>
-                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToExploreHomeStoryboard" id="mEL-Qh-bzu"/>
+                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToTopHouseStoryboard" id="mEL-Qh-bzu"/>
                         <segue destination="37V-uN-uYT" kind="show" identifier="resetPasswordSegue" id="xqn-EM-IgC"/>
                     </connections>
                 </viewController>
@@ -432,10 +433,10 @@
             </objects>
             <point key="canvasLocation" x="-1532" y="-1668"/>
         </scene>
-        <!--ExploreHomeViewController-->
+        <!--TabBarController-->
         <scene sceneID="1P3-1v-aDa">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ExploreHomeViewController" storyboardName="ExploreHome" referencedIdentifier="ExploreHomeViewController" id="IIW-1s-M1N" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="TabBarController" storyboardName="TopHouse" referencedIdentifier="TabBarController" id="IIW-1s-M1N" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Od2-YP-iXK"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8C0-OR-98O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -530,7 +531,7 @@
         <!--Register-->
         <scene sceneID="XCo-xO-hQy">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gyz-4u-kMl" customClass="RegisterViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gyz-4u-kMl" customClass="RegisterViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uPv-ed-PTQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -804,7 +805,7 @@
                         <outlet property="passwordView" destination="wj4-U8-iov" id="Aqi-ni-Eo0"/>
                         <outlet property="registerButton" destination="4ei-eb-G0L" id="T8i-sY-gls"/>
                         <outlet property="scrollView" destination="xdM-ZM-7oo" id="SXu-Rf-mYm"/>
-                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToExploreHomeStoryboard" id="5VT-nl-gnm"/>
+                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToTopHouseStoryboard" id="5VT-nl-gnm"/>
                         <segue destination="iOt-0Q-sGd" kind="show" identifier="loginSegue" id="bb8-8a-35c"/>
                     </connections>
                 </viewController>
@@ -815,7 +816,7 @@
         <!--Login-->
         <scene sceneID="DZp-Xs-ZI0">
             <objects>
-                <viewController id="iOt-0Q-sGd" customClass="LoginViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iOt-0Q-sGd" customClass="LoginViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="syU-SA-Mti">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -850,7 +851,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqz-aj-ugu" userLabel="Email View">
                                                         <rect key="frame" x="20" y="100" width="335" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="q@q.com" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jGW-EH-422">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@gmail.com" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jGW-EH-422">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -868,7 +869,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJn-Yz-zO8" userLabel="Password View">
                                                         <rect key="frame" x="20" y="170" width="335" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-r0-Nrn">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-r0-Nrn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -1067,7 +1068,7 @@
                         <outlet property="passwordTextField" destination="w7z-r0-Nrn" id="eMP-NW-ozr"/>
                         <outlet property="passwordView" destination="uJn-Yz-zO8" id="OaU-Kl-KUx"/>
                         <outlet property="scrollView" destination="Bnl-FF-yeb" id="iJH-bo-QCB"/>
-                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToExploreHomeStoryboard" id="E1t-gM-aqW"/>
+                        <segue destination="IIW-1s-M1N" kind="show" identifier="goToTopHouseStoryboard" id="E1t-gM-aqW"/>
                         <segue destination="jq7-cX-zxN" kind="show" identifier="resetPasswordSegue" id="6wr-fX-Zdv"/>
                     </connections>
                 </viewController>
@@ -1079,7 +1080,7 @@
         <!--Reset Password-->
         <scene sceneID="0G5-rz-0dF">
             <objects>
-                <viewController id="jq7-cX-zxN" customClass="ResetPasswordViewController" customModule="Hotel_Booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jq7-cX-zxN" customClass="ResetPasswordViewController" customModule="CouchSurfing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="foY-GE-hfq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1216,7 +1217,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="E1t-gM-aqW"/>
+        <segue reference="npc-9x-5TF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Register Illustration" width="219" height="169"/>
